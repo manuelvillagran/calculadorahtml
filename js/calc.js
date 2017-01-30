@@ -58,34 +58,88 @@ function valor9() {
 	document.getElementById('res').value = number;
 }
 
-/*
 function cero() {
 	var pera = document.getElementById('res').value
-		if pera =! ""
+		if (pera != "")
 			pera = pera + "0"
 		else 
 			pera = ""
 		document.getElementById('res').value = pera;
 //aca tengo el problema!
 }
-*/
 
 function borrar() {
-	var element = document.getElementById("res");
-	element.parentNode.removeChild(element);
 	document.getElementById('res').value = "";
 }
-/*
 function punto() {
-	var puntito = document.getElementById("res");
-	if puntito != ""
-			puntito = puntito + "0"
+	var caracter = document.getElementById('res').value;	
+	caracter2 = caracter.length+1
+	caracter3 = caracter.charAt(caracter2)
+		if (caracter3 == ".") {
+			caracter3 = caracter}
+		else 
+			{caracter = caracter + "." }
+	document.getElementById('res').value = caracter;
+}
+	/*
+	/*var display = document.getElementById("res").value;*/
+	/*
+	var puntito = document.getElementById("res").value;
+	if (puntito != "")
+			puntito = puntito + "."
 		else 
 			puntito = ""
 		document.getElementById('res').value = puntito;
+		*/
+
+	/*document.getElementById("text").value = display.charAt(0);
+	for (var i = 0      ;         i < display.length       ;       i =  i + 1) {
+		var caracter = display.charAt(i);	
+		if (caracter == "5") {
+			alert('encontre un 5 en la posicion ' + i + '. en una cadena de ' +display.length + 'de largo' );
+		}
+
+	}*/
+
+	//document.getElementById('res').value = eval(display);
+	/**
+	que soporta eval
+	2+4
+	1-6
+	2*5
+	10/3
+	10.5+1.9
+	10+-7
+
+	*/
+
+	/*
+ayuda camilo
+cadena.length dice que tan larga es la cadena
+cadena.charAt(0) nos entrega el primer caracter de la cadena
+cadena.charAt(1) nos entrega el segundo caracter de la cadena
+cadena.charAt(3) nos entrega el tercero caracter de la cadena	*/
+
+function suma() {
+	var number = document.getElementById('res').value;
+	document.getElementById('res').value = number + '+';
 }
 
-*/
+function resta() {
+	var restar = document.getElementById('res').value;
+	document.getElementById('res').value = restar + '-';
+}
+
+function multiplicacion() {
+	var producto = document.getElementById('res').value;
+	document.getElementById('res').value = producto + '*';
+}
+
+function division () {
+	var dividir = document.getElementById('res').value;
+	document.getElementById('res').value = dividir + '/';
+}
+
 
 
 

@@ -21,33 +21,36 @@
       <button type="button" class="calc-button calc-button-gray" >mrc</button>
       <button type="button" class="calc-button calc-button-gray" >m-</button>
       <button type="button" class="calc-button calc-button-gray" >m+</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" >/</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="division()">/</button>
     </p>
     <p class="calc-row">
       <button type="button" class="calc-button" onclick="valor7('')">7</button>
       <button type="button" class="calc-button" onclick="valor8('')">8</button>
       <button type="button" class="calc-button" onclick="valor9('')">9</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" >x</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="multiplicacion()">x</button>
     </p>
     <p class="calc-row">
       <button type="button" class="calc-button" onclick="calculo4('')" >4</button>
       <button type="button" class="calc-button" onclick="calculo5('')">5</button>
-      <button type="button" class="calc-button" onclick="calculo6('')"">6</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" >-</button>
+      <button type="button" class="calc-button" onclick="calculo6('')">6</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="resta('')">-</button>
     </p>
     <p class="calc-row">
       <button type="button" class="calc-button" onclick="boton1('')" >1</button>
       <button type="button" class="calc-button" onclick="boton2('')">2</button>
       <button type="button" class="calc-button" onclick="boton3('')">3</button>
-      <button type="button" class="calc-button calc-button-red calc-button-big" >+</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" onclick="suma()">+</button>
     </p>
     <p class="calc-row">
       <button type="button" class="calc-button" onclick="cero('')">0</button>
       <button type="button" class="calc-button" onclick="punto('')">.</button>
       <button type="button" class="calc-button" onclick="borrar('')">C</button>
-      <button type="button" class="calc-button calc-button-yellow calc-button-big" >=</button>
+      <button type="button" class="calc-button calc-button-yellow calc-button-big" onclick="igualdad('')">=</button>
     </p>
   </form>
+
+
+<input type="text" id="text">
 
 </body>
 </html>
