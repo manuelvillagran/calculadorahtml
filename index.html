@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html class="lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]> <html class="lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]> <html class="lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Rechner</title>
+  
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="js/calc.js"></script>
+</head>
+<body>
+  <form class="calc">
+    <p class="calc-display">
+      <input type="text" name="res" id="res" value="" class="calc-display-input" onfocus="this.blur()">
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button calc-button-gray" >mrc</button>
+      <button type="button" class="calc-button calc-button-gray" >m-</button>
+      <button type="button" class="calc-button calc-button-gray" >m+</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" >/</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="valor7('')">7</button>
+      <button type="button" class="calc-button" onclick="valor8('')">8</button>
+      <button type="button" class="calc-button" onclick="valor9('')">9</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" >x</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="calculo4('')" >4</button>
+      <button type="button" class="calc-button" onclick="calculo5('')">5</button>
+      <button type="button" class="calc-button" onclick="calculo6('')"">6</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" >-</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="boton1('')" >1</button>
+      <button type="button" class="calc-button" onclick="boton2('')">2</button>
+      <button type="button" class="calc-button" onclick="boton3('')">3</button>
+      <button type="button" class="calc-button calc-button-red calc-button-big" >+</button>
+    </p>
+    <p class="calc-row">
+      <button type="button" class="calc-button" onclick="cero('')">0</button>
+      <button type="button" class="calc-button" onclick="punto('')">.</button>
+      <button type="button" class="calc-button" onclick="borrar('')">C</button>
+      <button type="button" class="calc-button calc-button-yellow calc-button-big" >=</button>
+    </p>
+  </form>
+
+</body>
+</html>
