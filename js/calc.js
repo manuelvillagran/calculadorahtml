@@ -73,10 +73,10 @@ function borrar() {
 }
 function punto() {
 	var caracter = document.getElementById('res').value;	
-	caracter2 = caracter.length+1
-	caracter3 = caracter.charAt(caracter2)
-		if (caracter3 == ".") {
-			caracter3 = caracter}
+	for (var i = 0; i >= 0; i++) 
+	caracter2 = caracter.charAt(i)
+		if (caracter2 = ".") {    //puse ambos == y = y sigue dandome el problema
+			caracter = ""}
 		else 
 			{caracter = caracter + "." }
 	document.getElementById('res').value = caracter;
