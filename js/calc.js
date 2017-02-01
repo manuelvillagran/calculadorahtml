@@ -100,8 +100,11 @@ function punto() {
 		}
 
 	}*/
+	function igualdad() {
+	var display = document.getElementById("res").value;
+	document.getElementById('res').value = eval(display);
+	}
 
-	//document.getElementById('res').value = eval(display);
 	/**
 	que soporta eval
 	2+4
