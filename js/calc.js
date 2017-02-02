@@ -71,17 +71,57 @@ function cero() {
 function borrar() {
 	document.getElementById('res').value = "";
 }
+
 function punto() {
-	var caracter = document.getElementById('res').value;	
-	for (var i = 0; i >= 0; i++) 
-	caracter2 = caracter.charAt(i)
-		if (caracter2 = ".") {    //puse ambos == y = y sigue dandome el problema
-			caracter = ""}
-		else 
-			{caracter = caracter + "." }
-	document.getElementById('res').value = caracter;
-}
+	var cadena = document.getElementById('res').value;	
+	var largo_de_la_cadena = cadena.length;
+
+
+	//display = 350;
+	//i = 0
+	//largo_de_la_cadena =  3
 	/*
+	primera iteracion: i = 0  largo_de_la_cadena = 3
+		0<=3
+	primera iteracion: i = 1  largo_de_la_cadena = 3
+		1<=3
+	primera iteracion: i = 2  largo_de_la_cadena = 3
+		2<=3
+	primera iteracion: i = 3  largo_de_la_cadena = 3
+		3<=3
+
+
+	*/
+
+
+
+/*
+paso 1 : guardar valor real del display
+paso 2 : recorrer display uno a uno, y ver si tiene un punto!!!!
+paso 3 : escribir el punto en el display, solo enc aso que el paso 2 no encuentre punto
+*/
+	var cantidad_de_pntos = 0;
+	for (var i = 0; i <=largo_de_la_cadena-1; i++) {
+		if (cadena.charAt(i) == '.') {
+			cantidad_de_pntos = cantidad_de_pntos + 1;
+		} 
+	}
+	if (cantidad_de_pntos > 0){
+		document.getElementById('res').value = cadena;
+	}
+	else { 
+		document.getElementById('res').value = cadena + ".";
+	}
+
+
+
+/* cambiar todos los 4 rpo la letra a */
+
+//	var nueva_cadena_temporal = document.getElementById('res').value.replace('4', 'A'); IMPORTANTE
+
+}
+
+
 	/*var display = document.getElementById("res").value;*/
 	/*
 	var puntito = document.getElementById("res").value;
@@ -98,12 +138,27 @@ function punto() {
 		if (caracter == "5") {
 			alert('encontre un 5 en la posicion ' + i + '. en una cadena de ' +display.length + 'de largo' );
 		}
-
-	}*/
-	function igualdad() {
-	var display = document.getElementById("res").value;
-	document.getElementById('res').value = eval(display);
+		*/
+	function canCalculate() {
+    		var display = document.getElementById('res').value;
+   			var lastValue = display.charAt(display.length - 1);
+    		if (lastValue == '+' || lastValue == '-' || lastValue == '/' || lastValue == 'x') {
+      		  return false; 
+   			 }	
+    		return true;
 	}
+
+	function igualdad() {
+		//var nueva_cadena = document.getElementById('res').value.replace(/x/g, '*');
+		   var forward = canCalculate();
+
+    	if (forward) {
+			var display = document.getElementById('res').value.replace('x', '*');
+			document.getElementById('res').value = eval(display);
+		}
+	
+	}
+
 
 	/**
 	que soporta eval
@@ -124,25 +179,108 @@ cadena.charAt(1) nos entrega el segundo caracter de la cadena
 cadena.charAt(3) nos entrega el tercero caracter de la cadena	*/
 
 function suma() {
-	var number = document.getElementById('res').value;
-	document.getElementById('res').value = number + '+';
+	var cadena = document.getElementById('res').value;	
+	var largo_de_la_cadena = cadena.length;
+	var cantidad_de_operadores_matematicos = 0;
+	for (var i = 0; i <=largo_de_la_cadena-1; i++) {
+		if (cadena.charAt(i) == '+') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == '-') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == '/') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == 'x') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+	}
+	if (cantidad_de_operadores_matematicos > 0){
+		document.getElementById('res').value = cadena;
+	}
+	else { 
+		document.getElementById('res').value = cadena + "+";
+	}
 }
 
+
 function resta() {
-	var restar = document.getElementById('res').value;
-	document.getElementById('res').value = restar + '-';
+	var cadena = document.getElementById('res').value;	
+	var largo_de_la_cadena = cadena.length;
+	var cantidad_de_operadores_matematicos = 0;
+	for (var i = 0; i <=largo_de_la_cadena-1; i++) {
+		if (cadena.charAt(i) == '-') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 	
+		if (cadena.charAt(i) == '+') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == '/') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == 'x') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+	}
+	if (cantidad_de_operadores_matematicos > 0){
+		document.getElementById('res').value = cadena;
+	}
+	else { 
+		document.getElementById('res').value = cadena + "-";
+	}
 }
 
 function multiplicacion() {
-	var producto = document.getElementById('res').value;
-	document.getElementById('res').value = producto + '*';
+	var cadena = document.getElementById('res').value;	
+	var largo_de_la_cadena = cadena.length;
+	var cantidad_de_operadores_matematicos = 0;
+	for (var i = 0; i <=largo_de_la_cadena-1; i++) {
+		if (cadena.charAt(i) == 'x') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;                                      
+		} 
+		if (cadena.charAt(i) == '+') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == '-') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == '/') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+	}
+	if (cantidad_de_operadores_matematicos > 0){
+		document.getElementById('res').value = cadena;
+	}
+	else { 
+		document.getElementById('res').value = cadena + "x";
+	}
 }
-
 function division () {
-	var dividir = document.getElementById('res').value;
-	document.getElementById('res').value = dividir + '/';
+	var cadena = document.getElementById('res').value;	
+	var largo_de_la_cadena = cadena.length;
+	var cantidad_de_operadores_matematicos = 0;
+	for (var i = 0; i <=largo_de_la_cadena-1; i++) {
+		if (cadena.charAt(i) == '/') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == '+') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == '-') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+		if (cadena.charAt(i) == 'x') {
+			cantidad_de_operadores_matematicos = cantidad_de_operadores_matematicos + 1;
+		} 
+	}
+	if (cantidad_de_operadores_matematicos > 0){
+		document.getElementById('res').value = cadena;
+	}
+	else { 
+		document.getElementById('res').value = cadena + "/";
+	}
 }
-
 
 
 
